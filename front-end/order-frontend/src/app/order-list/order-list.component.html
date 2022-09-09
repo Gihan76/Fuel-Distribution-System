@@ -1,0 +1,32 @@
+<!-- <p>order-list works!</p> -->
+<div class="container">
+    <h3 class="title" style="text-align: center;">Fuel Requests</h3>
+    <table class="table">
+        <thead>
+            <th style="text-align: center;">Id</th>
+            <th style="text-align: center;">Fuel Station</th>
+            <th style="text-align: center;">Address</th>
+            <th style="text-align: center;">City</th>
+            <th style="text-align: center;">Zip Code</th>
+            <th style="text-align: center;">Fuel Type</th>
+            <th style="text-align: center;">Requested Load</th>
+            <th style="text-align: center;">Actions</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let order of orders">
+                <td style="text-align: center;">{{order.id}}</td>
+                <td style="text-align: center;">{{order.name}}</td>
+                <td style="text-align: center;">{{order.address}}</td>
+                <td style="text-align: center;">{{order.city}}</td>
+                <td style="text-align: center;">{{order.zipCode}}</td>
+                <td style="text-align: center;">{{order.fuelType}}</td>
+                <td style="text-align: center;">{{order.capacity}} <b>L</b></td>
+                <td style="text-align: center;">
+                    <button class="btn btn-info" style="width: 70px;" (click)="updateOrder(order.id)">Edit</button>
+                    <button class="btn btn-danger" style="margin-left: 10px; width: 70px;" (click)="deleteOrder(order.id)">Delete</button>
+                    <button class="btn btn-warning" style="margin-left: 10px; width: 70px;" (click)="viewOrder(order.id)">Details</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

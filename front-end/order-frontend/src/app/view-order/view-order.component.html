@@ -1,0 +1,52 @@
+<!-- <p>view-order works!</p> -->
+
+<!-- <div class="container">
+    <div class="card">
+        <p>{{order.name}}</p>
+        <p>{{order.address}}</p>
+        <p>{{order.city}}</p>
+        <p>{{order.zipCode}}</p>
+        <p>{{order.fuelType}}</p>
+        <p>{{order.capacity}}</p>
+    </div>
+</div> -->
+
+<div class="row" style="justify-content: center; margin-top: 100px;">
+      <div [ngClass]="(order.status == 'Pending')?'card text-white bg-danger mb-3':'card text-white bg-success mb-3'" style="max-width: 18rem;">
+        <div class="card-header">Allocation</div>
+        <div class="card-body">
+            <p *ngIf="order.status == 'Pending' else AllocationSuccess">Pending Allocation</p>
+            <ng-template #AllocationSuccess>
+                <p>Allocation Success</p>
+            </ng-template>
+        </div>
+      </div>
+      <div [ngClass]="(order.status == 'Pending')?'card text-white bg-danger mb-3':'card text-white bg-success mb-3'" style="max-width: 18rem; margin-left: 10px;">
+        <div class="card-header">Schedule</div>
+        <div class="card-body">
+            <p *ngIf="order.status == 'Pending' else ScheduleSuccess">Pending Schedule</p>
+            <ng-template #ScheduleSuccess>
+                <p>Schedule Success</p>
+            </ng-template>
+        </div>
+      </div>
+      <div [ngClass]="(order.status == 'Pending')?'card text-white bg-danger mb-3':'card text-white bg-success mb-3'" style="max-width: 18rem; margin-left: 10px;">
+        <div class="card-header">Dispatch</div>
+        <div class="card-body">
+            <p *ngIf="order.status == 'Pending' else DispatchSuccess">Pending Dispatch</p>
+            <ng-template #DispatchSuccess>
+                <p>Dispatched from Ceylon Petroleum Corporation</p>
+            </ng-template>
+        </div>
+      </div>
+      <div [ngClass]="(order.status == 'Pending')?'card text-white bg-danger mb-3':'card text-white bg-warning mb-3'" style="max-width: 18rem; margin-left: 10px;">
+        <div class="card-header" style="color: black; font-weight: bold;">Est. Delivery Date</div>
+        <div class="card-body">
+            <p *ngIf="order.status == 'Pending' else PendingDelivery">Pending Delivery</p>
+            <ng-template #PendingDelivery>
+                <p></p>
+            </ng-template>
+        </div>
+      </div>
+</div>
+

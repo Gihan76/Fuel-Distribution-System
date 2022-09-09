@@ -1,0 +1,49 @@
+<!-- <p>update-order works!</p> -->
+<div class="container">
+    <h3 style="text-align: center;">Edit Order</h3>
+    <form (ngSubmit)="onUpdate()">
+        <div class="form-row row">
+
+            <div class="form-group col-md-6">
+                <label for="name">Fuel Station Name</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Name of the Fuel Station" [(ngModel)]="order.name" required>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="address">Address</label>
+                <input type="text" class="form-control" id="address" name="address" placeholder="1234 Main St" [(ngModel)]="order.address" required>
+            </div>
+
+            <div class="form-row row">
+                <div class="form-group col-md-6">
+                    <label for="city">City</label>
+                    <input type="text" class="form-control" id="city" name="city" placeholder="Colombo-11" [(ngModel)]="order.city" required>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="zipCode">Postal Code</label>
+                    <input type="text" class="form-control" id="zipCode" name="zipCode" placeholder="11000" [(ngModel)]="order.zipCode" required>
+                </div>
+            </div>
+
+            <div class="form=row row">
+                <div class="form-group col-md-6">
+                    <label for="capacity">Fuel Type</label>
+                    <select class="form-select form-control" name="fuelType" [(ngModel)]="order.fuelType">
+                        <option value="Diesel">Diesel</option>
+                        <option value="Super Diesel">Super Diesel</option>
+                        <option value="92 Octane">92 Octane</option>
+                        <option value="95 Octane">95 Octane</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="capacity">Capacity</label>
+                    <input type="number" class="form-control" id="capacity" name="capacity" placeholder="10000" [(ngModel)]="order.capacity" required>
+                </div>
+            </div>
+
+            <div style="margin-top: 10px;">
+                <button type="submit" class="btn btn-primary">Update Requested Order Details</button>
+            </div>
+        </div>
+    </form>
+</div>
